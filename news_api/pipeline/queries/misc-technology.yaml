@@ -1,0 +1,28 @@
+query_slug: technology_products_semiconductors_cybersecurity_expected_likely_projected_forecast
+query_domain: misc-technology
+lang: eng
+dateStart: "2026-03-26"
+dateEnd: "2026-04-26"
+sortBy: rel
+maxItems: 500
+dataType: news
+bodyLen: -1
+isDuplicateFilter: skipDuplicates
+keyword_groups:
+  topics:
+    - technology
+  event_nouns:
+    - products
+    - semiconductors
+    - cybersecurity
+    - smartphones
+    - software
+    - chips
+    - devices
+  prediction_triggers:
+    - expected
+    - likely
+    - projected
+    - forecast
+    - predict
+    - could

@@ -1,0 +1,26 @@
+query_slug: nfl_playoffs_draft_season_expected_likely_prediction_forecast
+query_domain: sport
+lang: eng
+dateStart: "2026-03-26"
+dateEnd: "2026-04-26"
+sortBy: rel
+maxItems: 500
+dataType: news
+bodyLen: -1
+isDuplicateFilter: skipDuplicates
+keyword_groups:
+  topics:
+    - NFL
+  event_nouns:
+    - playoffs
+    - draft
+    - season
+    - bracket
+    - championship
+  prediction_triggers:
+    - expected
+    - likely
+    - projected
+    - forecast
+    - prediction
+    - odds

@@ -1,0 +1,27 @@
+query_slug: ai_product_launch_adoption_expected_likely_projected_forecast
+query_domain: misc-ai
+lang: eng
+dateStart: "2026-03-26"
+dateEnd: "2026-04-26"
+sortBy: rel
+maxItems: 1000
+dataType: news
+bodyLen: -1
+isDuplicateFilter: skipDuplicates
+keyword_groups:
+  topics:
+    - artificial intelligence
+  event_nouns:
+    - product launch
+    - adoption
+    - deployment
+    - regulation
+    - jobs
+    - automation
+  prediction_triggers:
+    - expected
+    - likely
+    - projected
+    - forecast
+    - predict
+    - could

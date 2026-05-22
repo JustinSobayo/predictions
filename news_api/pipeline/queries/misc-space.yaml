@@ -1,0 +1,28 @@
+query_slug: space_missions_satellites_launch_expected_likely_projected_forecast
+query_domain: misc-space
+lang: eng
+dateStart: "2026-03-26"
+dateEnd: "2026-04-26"
+sortBy: rel
+maxItems: 500
+dataType: news
+bodyLen: -1
+isDuplicateFilter: skipDuplicates
+keyword_groups:
+  topics:
+    - space
+  event_nouns:
+    - missions
+    - satellites
+    - launch
+    - rocket
+    - NASA
+    - SpaceX
+    - orbit
+  prediction_triggers:
+    - expected
+    - likely
+    - projected
+    - forecast
+    - predict
+    - could

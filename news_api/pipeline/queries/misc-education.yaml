@@ -1,0 +1,28 @@
+query_slug: education_schools_college_enrollment_expected_likely_projected_forecast
+query_domain: misc-education
+lang: eng
+dateStart: "2026-03-26"
+dateEnd: "2026-04-26"
+sortBy: rel
+maxItems: 500
+dataType: news
+bodyLen: -1
+isDuplicateFilter: skipDuplicates
+keyword_groups:
+  topics:
+    - education
+  event_nouns:
+    - schools
+    - college
+    - enrollment
+    - students
+    - tuition
+    - graduation
+    - curriculum
+  prediction_triggers:
+    - expected
+    - likely
+    - projected
+    - forecast
+    - predict
+    - could

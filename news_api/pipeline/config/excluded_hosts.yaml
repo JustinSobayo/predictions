@@ -1,0 +1,63 @@
+# excluded_hosts.yaml
+# -----------------------------------------------------------------------------
+# Tier 1 publisher blocklist for the excluded-domain detector.
+# See ETL_Pipeline_Plan.md section 3.0.1.
+#
+# A canonical host (lowercased, "www." stripped) listed here triggers a hard
+# reject before any further pipeline processing. Hosts here should be
+# publishers whose *primary* editorial output is finance, weather, or climate.
+#
+# Mixed-topic publishers (Bloomberg, WSJ, FT, Reuters, NYT, BBC, CNBC, etc.)
+# are intentionally NOT in this list — their non-excluded sections (politics,
+# tech, sport, health) are still admissible. Use excluded_paths.yaml to block
+# their finance/weather/climate sub-paths instead.
+#
+# Format:
+#   <bucket>:
+#     - <host>            # short note about why it's here
+#
+# When you add a host:
+# - lowercase, no scheme, no leading "www."
+# - prefer a subdomain (e.g. finance.yahoo.com) over the whole apex domain
+#   when only one section of the publisher is excluded.
+# - log every addition in the plan's Decisions section so the rejection
+#   audit trail stays reviewable.
+# -----------------------------------------------------------------------------
+
+financial:
+  - marketwatch.com        # Dow Jones financial news / markets.
+  - seekingalpha.com       # Investor research and stock commentary.
+  - investing.com          # Markets / quotes publisher.
+  - fool.com               # The Motley Fool — investing-only.
+  - nasdaq.com             # Exchange site, primarily quotes / commentary.
+  - finance.yahoo.com      # Yahoo Finance subdomain only — keep yahoo.com.
+  - benzinga.com           # Markets / trading news.
+  - thestreet.com          # Markets news.
+  - zacks.com              # Equity research / ratings.
+  - morningstar.com        # Investment research / funds.
+  - barrons.com            # Dow Jones investing weekly.
+  - 247wallst.com          # Markets commentary aggregator.
+  - forexlive.com          # Forex trading news.
+  - coindesk.com           # Crypto-only news outlet.
+  - cointelegraph.com      # Crypto-only news outlet.
+  - decrypt.co             # Crypto-only news outlet.
+  - cryptonews.com         # Crypto-only news outlet.
+  - kitco.com              # Precious metals / finance commentary.
+
+weather:
+  - weather.com            # The Weather Channel.
+  - accuweather.com        # AccuWeather.
+  - wunderground.com       # Weather Underground.
+  - weather.gov            # NOAA National Weather Service.
+  - weatherbug.com         # WeatherBug.
+  - intellicast.com        # Legacy weather portal (now redirects).
+
+climate:
+  - climate.gov                  # NOAA climate sub-site.
+  - carbonbrief.org              # UK climate science journalism.
+  - climatecentral.org           # Climate Central reports.
+  - yaleclimateconnections.org   # Yale Climate Connections.
+  - insideclimatenews.org        # Inside Climate News.
+  - climatehome.news             # Climate Home News.
+  - desmog.com                   # DeSmog climate journalism.
+  - grist.org                    # Climate-focused environmental news.

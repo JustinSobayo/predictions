@@ -1,0 +1,27 @@
+query_slug: health_officials_doctors_experts_expected_likely_projected_forecast
+query_domain: health
+lang: eng
+dateStart: "2026-03-26"
+dateEnd: "2026-04-26"
+sortBy: rel
+maxItems: 500
+dataType: news
+bodyLen: -1
+isDuplicateFilter: skipDuplicates
+keyword_groups:
+  topics:
+    - health
+  event_nouns:
+    - officials
+    - doctors
+    - experts
+    - disease
+    - vaccine
+    - public health
+  prediction_triggers:
+    - expected
+    - likely
+    - projected
+    - forecast
+    - predict
+    - warn

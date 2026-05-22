@@ -1,0 +1,80 @@
+# llm.yaml
+# -----------------------------------------------------------------------------
+# LLM provider settings for ETL candidate/domain extraction.
+# Secrets are not stored here. API keys come from environment variables loaded
+# from `.env` at runtime.
+# -----------------------------------------------------------------------------
+
+default_provider: gemini
+
+providers:
+  gemini:
+    role: primary
+    # Rollback option: model: gemini-3.1-flash-lite-preview
+    model: gemini-2.5-flash-lite
+    model_display_name: Gemini 2.5 Flash-Lite
+    api_key_env: GEMINI_API_KEY
+    use_for:
+      - v1_candidate_extraction
+      - sequential_span_extraction
+      - query_domain_assignment
+    mode:
+      prototype: free_tier
+      large_runs: free_tier_until_limit
+    structured_output: true
+    notes:
+      - Use the free tier for v1.
+      - Expand to paid Batch mode or alternate providers later only if volume, rate limits, or data-use terms require it.
+
+candidate_extraction:
+  temperature: 0
+  response_format: json_schema
+  prompt_version: candidate_span_extraction_high_precision_v7
+  request_mode: free_tier
+  max_retries: 5
+  retry_base_delay_seconds: 10
+  retry_max_delay_seconds: 120
+  max_articles_per_call: 1
+  target_sentences_per_call: 40
+  hard_max_sentences_per_call: 60
+  target_input_tokens_per_call: 6000
+  hard_max_input_tokens_per_call: 10000
+  no_minimum_sentence_length: true
+  store_metadata_fields:
+    - provider
+    - model
+    - prompt_version
+    - domain_prompt_version
+    - temperature
+    - request_mode
+    - input_token_count
+    - output_token_count
+  output_fields:
+    - primary_sentence_id
+    - span_sentence_ids
+    - span_text
+    - candidate_reason
+    - reason_category
+    - context_needed
+    - uncertainty_note
+
+domain_assignment:
+  temperature: 0
+  response_format: json_schema
+  prompt_version: query_domain_assignment_v1
+  allowed_domains:
+    - health
+    - policy
+    - sport
+    - misc-<subtopic>
+  excluded_domains:
+    - financial
+    - finance
+    - weather
+    - climate
+  output_fields:
+    - query_domain
+    - top_level_domain
+    - misc_subtopic
+    - confidence
+    - domain_reason

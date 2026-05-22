@@ -1,0 +1,28 @@
+query_slug: transportation_airlines_transit_shipping_expected_likely_projected_forecast
+query_domain: misc-transportation
+lang: eng
+dateStart: "2026-03-26"
+dateEnd: "2026-04-26"
+sortBy: rel
+maxItems: 500
+dataType: news
+bodyLen: -1
+isDuplicateFilter: skipDuplicates
+keyword_groups:
+  topics:
+    - transportation
+  event_nouns:
+    - airlines
+    - transit
+    - shipping
+    - rail
+    - vehicles
+    - logistics
+    - infrastructure
+  prediction_triggers:
+    - expected
+    - likely
+    - projected
+    - forecast
+    - predict
+    - could

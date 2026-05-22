@@ -1,0 +1,66 @@
+# excluded_paths.yaml
+# -----------------------------------------------------------------------------
+# Tier 2 URL-path blocklist for the excluded-domain detector.
+# See ETL_Pipeline_Plan.md section 3.0.1.
+#
+# Used for *mixed-topic publishers* (Bloomberg, WSJ, FT, Reuters, NYT, BBC,
+# CNBC, etc.) whose host should not be hard-blocked. If the canonical URL
+# path starts with any prefix listed here, the article is rejected as
+# belonging to an excluded bucket.
+#
+# Match rules:
+# - Compare against the URL path only (after stripping host + query string).
+# - Match is case-insensitive.
+# - Each prefix must be a *complete* path segment or sequence of segments,
+#   e.g. "/markets/" matches "/markets/foo" but not "/marketsplace".
+# - Trailing slash is significant: "/markets/" is a directory match.
+# - The match runs against the canonical, redirect-resolved final URL, not
+#   the raw NewsAPI URL.
+#
+# Default-admit principle (3.0): when in doubt, do not add a path here.
+# Borderline articles are supposed to survive into misc-<subtopic>, not be
+# silently dropped.
+# -----------------------------------------------------------------------------
+
+financial:
+  - /markets/
+  - /finance/
+  - /personal-finance/
+  - /money/
+  - /stocks/
+  - /investing/
+  - /investment/
+  - /earnings/
+  - /forex/
+  - /crypto/
+  - /cryptocurrency/
+  - /business/finance/
+  - /business/markets/
+  - /business/stocks/
+  - /business/economy/
+  - /sections/business/finance/
+  - /news/business/markets/
+
+weather:
+  - /weather/
+  - /forecast/
+  - /forecasts/
+  - /storms/
+  - /storm/
+  - /hurricane/
+  - /hurricanes/
+  - /tornado/
+  - /tornadoes/
+  - /flood/
+  - /flooding/
+  - /heatwave/
+  - /winter-storm/
+
+climate:
+  - /climate/
+  - /climate-change/
+  - /climatechange/
+  - /environment/climate/
+  - /environment/climate-change/
+  - /sections/climate/
+  - /news/climate/

@@ -1,0 +1,28 @@
+query_slug: entertainment_movies_streaming_box_office_expected_likely_projected_forecast
+query_domain: misc-entertainment
+lang: eng
+dateStart: "2026-03-26"
+dateEnd: "2026-04-26"
+sortBy: rel
+maxItems: 500
+dataType: news
+bodyLen: -1
+isDuplicateFilter: skipDuplicates
+keyword_groups:
+  topics:
+    - entertainment
+  event_nouns:
+    - movies
+    - streaming
+    - box office
+    - television
+    - music
+    - awards
+    - subscribers
+  prediction_triggers:
+    - expected
+    - likely
+    - projected
+    - forecast
+    - predict
+    - could

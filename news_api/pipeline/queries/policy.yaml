@@ -1,0 +1,27 @@
+query_slug: election_vote_polling_legislation_expected_likely_projected_forecast
+query_domain: policy
+lang: eng
+dateStart: "2026-01-01"
+dateEnd: "2026-04-26"
+sortBy: rel
+maxItems: 500
+dataType: news
+bodyLen: -1
+isDuplicateFilter: skipDuplicates
+keyword_groups:
+  topics:
+    - election
+  event_nouns:
+    - vote
+    - polling
+    - legislation
+    - bill
+    - lawmakers
+    - campaign
+  prediction_triggers:
+    - expected
+    - likely
+    - projected
+    - forecast
+    - predict
+    - could
